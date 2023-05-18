@@ -1,0 +1,43 @@
+table, td, th {
+    border: 1px #000000 solid;
+}
+.info{
+    width:80%;
+}
+.head{
+    display:flex;
+    flex-wrap: nowrap;
+}
+.ID{
+    display:flex;
+    width: 30%;
+    flex-wrap: nowrap;
+}
+.basic{
+    display:flex;
+    width: 30%;
+    flex-wrap: nowrap;
+}
+.contact{
+    display:flex;
+    width: 40%;
+    flex-wrap: nowrap;
+}
+.buttom{
+    display:flex;
+    flex-wrap: nowrap;
+}
+.director{
+    display:flex;
+    width: 50%;
+    flex-wrap: nowrap;
+}
+.history{
+    display:flex;
+    width: 50%;
+    flex-wrap: nowrap;
+}
+.favorite{
+    display:flex;
+    flex-wrap: nowrap;
+}
