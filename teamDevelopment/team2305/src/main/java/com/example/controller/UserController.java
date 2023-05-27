@@ -12,10 +12,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.dto.UserRequest;
+import com.example.entity.User;
+import com.example.repository.UserRepository;
 import com.example.service.UserListService;
 
 /**
@@ -29,6 +30,8 @@ public class UserController {
 	   */
 	@Autowired
 	private UserListService userService;
+	@Autowired
+	private UserRepository userRepository;
 
 	/**
 	  * ユーザー新規登録画面を表示
@@ -47,7 +50,7 @@ public class UserController {
 	   * @param model Model
 	   * @return ユーザー情報一覧画面
 	   */
-	@RequestMapping(value = "/UserRegister", method = RequestMethod.POST)
+	@PostMapping("/UserRegister")
 	public String userRegister(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			//入力チェックエラー
@@ -63,14 +66,24 @@ public class UserController {
 		return "redirect:/userList";
 	}
 
+	//5/26追加
 	/**
 	 * ユーザー情報詳細画面を表示
 	 * @param id 表示するユーザーID
 	 * @param model Model
 	 * @return ユーザー情報詳細画面
 	 */
-	@GetMapping("/user/{id}")
-	public String displayView(@PathVariable Long id, Model model) {
-		return "user/view";
+	@GetMapping("/myPage/{id}")
+	public String myPage(@PathVariable Long id,@ModelAttribute  Model model) {
+		User user = userRepository.findById(id).orElse(null);
+	    if (user != null) {
+	        model.addAttribute("user", user);
+	    }
+		model.addAttribute("ID", id);
+		return "myPage";
 	}
+
+
+
+
 }
