@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -42,11 +40,8 @@ public class UserController {
 	   * @param model Model
 	   * @return ユーザー情報一覧画面
 	   * */
-	/**
-	 *画面遷移ができないです
-	 */
 	@RequestMapping(value = "/user/create", method = RequestMethod.POST)
-	public String cretate(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model) {
+	public String cretate( UserRequest userRequest, BindingResult result, Model model) {
 		// ユーザー情報の登録
 		userService.create(userRequest);
 		return "/userList";
