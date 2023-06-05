@@ -18,16 +18,25 @@ public class UserRequest implements Serializable{
 	@NotEmpty(message="名前を入力してください")
 	@Size(max=100,message="名前は100桁以内で入力してください")
 	private String name;
+
 	 /**
 	   * フリガナ
 	   */
 	@NotEmpty(message="フリガナを入力してください")
-	@Size(max=255,message="フリガナは255桁")
+	@Size(max=100,message="名前は100桁以内で入力してください")
 	private String furigana;
 
-	/**
-	 * 後でやるーー
-	 */
+
+	 /**
+	   * mail
+	   */
+	@NotEmpty(message="mailを入力してください")
 	private String mail;
+
+	 /**
+	   * mail
+	   */
+	@NotEmpty(message="passを入力してください")
 	private String pass;
+
 }

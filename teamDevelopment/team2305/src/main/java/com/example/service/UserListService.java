@@ -1,7 +1,5 @@
 package com.example.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,15 +19,6 @@ public class UserListService {
 	   */
 	@Autowired
 	private UserRepository userRepository;
-
-	  /**
-	   * ユーザー情報 全検索
-	   * @return 検索結果
-	   */
-
-	public List<User>searchAll(){
-		return userRepository.findAll();
-	}
 
 	  /**
 	   * ユーザー情報 新規登録

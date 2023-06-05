@@ -9,34 +9,32 @@ body {
 	margin-top: 10%;
 }
 
-p, form, input {
+form{
+	text-align: center;
 	margin: 0;
 }
-
-#form {
+.form {
+	margin: 5px auto;
+	text-align:center;
 	width: 400px;
-	margin: 30px auto;
-	padding: 20px;
-}
-
-form p {
-	font-size: 14px;
 }
 
 .form-title {
 	text-align: center;
 }
 
-.mail, .pass {
-	margin-bottom: 20px;
+.nametitle{
+	padding-left: 32%;
 }
-
-input[type="email"], input[type="password"] {
-	width: 400px;
-	padding: 4px;
-	font-size: 14px;
+.furiganatitle{
+	padding-left: 24%;
 }
-
+.mailtitle{
+	padding-left: 25%;
+}
+.passtitle{
+	padding-left: 28%;
+}
 .parent {
 	display: flex;
 	justify-content: space-around;
@@ -46,9 +44,10 @@ input[type="email"], input[type="password"] {
 	text-align: center;
 	width: 80px;
 	height: 100px;
+	padding-top:2%;
 }
 
-.botton {
+button {
 	background-color: #2b95ff;
 	width: 140%;
 	height: 30%;

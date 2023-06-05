@@ -15,33 +15,33 @@ import lombok.Data;
  */
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "user2")
 public class User implements Serializable {
   /**
    * ID
    */
   @Id
-  @Column(name = "id")
+  @Column(name ="id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Integer id;
   /**
    * 名前
    */
-  @Column(name = "name")
+  @Column(name ="name")
   private String name;
   /**
    * フリガナ
    */
-  @Column(name = "フリガナ")
+  @Column(name ="furigana")
   private String furigana;
   /**
    * メールアドレス
    */
-  @Column(name = "mail")
+  @Column(name ="mail")
   private String mail;
   /**
    * パスワード
    */
-  @Column(name = "pass")
+  @Column(name ="pass")
   private String pass;
 }
