@@ -6,24 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.entity.User;
-import com.example.repository.UserRepository;
+import com.example.entity.UserAoyama;
+import com.example.repository.UserRepositoryAoyama;
 
 /**
  * ユーザー情報 Service
  */
 @Service
 @Transactional(rollbackFor=Exception.class)
-public class UserListService {
+public class UserListServiceAoyama {
 
 	@Autowired
-    UserRepository userRepository;
+    UserRepositoryAoyama userRepository;
 
 	/**
 	* ユーザー情報 全検索
 	* @return 検索結果
 	*/
-	public List<User>searchAll(){
+	public List<UserAoyama>searchAll(){
 		return userRepository.findAll();
 	}
 
@@ -38,8 +38,8 @@ public class UserListService {
      * @param id ユーザーID
      * @return ユーザー情報
      */
-    public User getUserById(Integer id) {
-        return userRepository.getOne(id);
+    public UserAoyama getUserById(Integer id) {
+        return userRepository.getById(id);
 
     }
 }

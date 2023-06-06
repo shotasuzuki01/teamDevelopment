@@ -5,20 +5,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.entity.User;
-import com.example.service.UserListService;
+import com.example.entity.UserAoyama;
+import com.example.service.UserListServiceAoyama;
 
 /**
 	 * ユーザー情報 Controller
 	 */
 @Controller
-public class UserController {
+public class myPageEdit {
 
 	//ユーザー情報 Service
 	@Autowired
-	UserListService userService;
+	UserListServiceAoyama userService;
 
 
 	/**
@@ -29,16 +29,16 @@ public class UserController {
 	 */
 	@GetMapping("/individualPage/{id}")
 	public String individualPage(@PathVariable("id") Integer id, Model model) {
-		User user = userService.getUserById(id);
+		UserAoyama user = userService.getUserById(id);
 	    model.addAttribute("user", user);
 		model.addAttribute("id", id);
 		return "individualPage";
 	}
 
-	//個人ページ
-	@PostMapping("/individualPageEdit/{id}")
+	//個人ページ編集
+	@RequestMapping("/individualPageEdit/{id}")
 	public String individualPageEdit(@PathVariable("id") Integer id, Model model) {
-		User user = userService.getUserById(id);
+		UserAoyama user = userService.getUserById(id);
 	    model.addAttribute("user", user);
 		model.addAttribute("id", id);
 		return "individualPageEdit";
