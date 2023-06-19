@@ -27,12 +27,10 @@ public class UserListServiceAoyama {
 		return userRepository.findAll();
 	}
 
-	  /**
-	   * ユーザー情報 新規登録
-	   * @param user ユーザー情報
-	   */
-
-
+	//ユーザーリストを取得
+	public List<UserAoyama> getUserList() {
+        return userRepository.findAll();
+    }
 	/**
      * 指定されたIDのユーザー情報を取得
      * @param id ユーザーID
@@ -42,4 +40,25 @@ public class UserListServiceAoyama {
         return userRepository.getById(id);
 
     }
+    // ユーザーの更新処理
+    public void updateUser(UserAoyama user) {
+    	UserAoyama userAoyama = new UserAoyama();
+    	userAoyama.setId(user.getId());
+    	userAoyama.setUserName(user.getUserName());
+    	userAoyama.setUserAge(user.getUserAge());
+    	userAoyama.setBirthPlace(user.getBirthPlace());
+    	userAoyama.setTelephoneNumber(user.getTelephoneNumber());
+    	userAoyama.setMail(user.getMail());
+    	userAoyama.setActiveDuty(user.getActiveDuty());
+    	userAoyama.setDepartment(user.getDepartment());
+    	userAoyama.setHireDate(user.getHireDate());
+    	userAoyama.setBeforeJob(user.getBeforeJob());
+    	userAoyama.setEducationalBg(user.getEducationalBg());
+    	userAoyama.setLicense(user.getLicense());
+    	userAoyama.setHobby(user.getHobby());
+    	userAoyama.setFree(user.getFree());
+
+        userRepository.save(user);
+    }
+
 }

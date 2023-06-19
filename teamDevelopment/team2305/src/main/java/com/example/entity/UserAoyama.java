@@ -25,34 +25,34 @@ public class UserAoyama{
 	private Integer id;
 	//ユーザー名
 	@Column(name = "user_name")
-	private String user_name;
+	private String userName;
 	//年齢
 	@Column(name = "user_age")
-	private Integer user_age;
+	private Integer userAge;
 	//誕生日
 	@Column(name = "birth_place")
-	private String birth_place;
+	private String birthPlace;
 	//電話番号
 	@Column(name = "telephone_number")
-	private String telephone_number;
+	private String telephoneNumber;
 	//メールアドレス
 	@Column(name = "mail")
 	private String mail;
 	//現役職
 	@Column(name = "active_duty")
-	private String active_duty;
+	private String activeDuty;
 	//所属部署
 	@Column(name = "department")
 	private String department;
 	//入社日
 	@Column(name = "hire_date")
-	private LocalDate  hire_date;
+	private LocalDate  hireDate;
 	//前職
 	@Column(name = "before_job")
-	private String before_job;
+	private String beforeJob;
 	//学歴
 	@Column(name = "educational_bg")
-	private String educational_bg;
+	private String educationalBg;
 	//資格
 	@Column(name = "license")
 	private String license;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 
     <head>
         <title>編集</title>
@@ -21,9 +22,14 @@
                 <th>年齢</th>
                 <th>現役職</th>
                 <th>所属部署</th>
-                
             </tr>
-            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr th:each="user : ${user}">
+                <td class="data" th:text="${user.id}"></td>
+                <td class="data" th:text="${user.userName}"></td>
+                <td class="data" th:text="${user.userAge}"></td>
+                <td class="data" th:text="${user.activeDuty}"></td>
+                <td class="data" th:text="${user.department}"></td>
+            </tr>
         </table>
 
     </body>

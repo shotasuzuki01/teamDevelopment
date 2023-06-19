@@ -1,7 +1,7 @@
 table, td, th {
     border: 1px #000000 solid;
     border-collapse: collapse;
-    margin:-1px; 
+    margin:-1px;
     font-size: 20px;
 }
 table{
@@ -35,6 +35,11 @@ table{
 }
 .upper_info > th { width: 100px; }
 .upper_info > .data{ width: 500px; }
+.upper_info > .data > .indata{
+	width: 500px;
+	height: 30px;
+	}
+
 
 .lower{
     display:flex;
@@ -42,13 +47,22 @@ table{
 }
 .lower_info > th{ width: 150px; }
 .lower_info > .data{ width: 750px; }
+.lower_info > .data > .indata{
+	width: 750px;
+	height: 30px;
+	}
 
 .favorite{
     display:flex;
     flex-wrap: nowrap;
 }
 .favorite_info > th{ width: 900px; }
-.favorite_info > .data{ 
-    width: 900px; 
+.favorite_info > .data{
+    width: 900px;
     height: 600px;
 }
+.favorite_info > .data > .indata{
+	width: 900px;
+	height: 600px;
+	}
+
