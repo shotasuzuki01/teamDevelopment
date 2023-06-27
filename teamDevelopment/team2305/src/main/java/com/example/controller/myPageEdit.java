@@ -35,10 +35,7 @@ public class myPageEdit {
 		UserAoyama user = userService.getUserById(id);
 	    model.addAttribute("user", user);
 		model.addAttribute("id", id);
-		int i = 0;
 		return "individualPage";
-
-
 	}
 
 	//個人ページ編集
